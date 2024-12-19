@@ -47,6 +47,16 @@ export default function App() {
 
   useEffect(
     function () {
+      if (
+        watchedList.map((movie) => movie.imdbID).includes(selectedID) === false
+      )
+        setUserRating(0);
+    },
+    [selectedID, watchedList]
+  );
+
+  useEffect(
+    function () {
       const controller = new AbortController();
       const signal = controller.signal;
 
