@@ -1,0 +1,193 @@
+:root {
+  --color-primary: #3e7db7;
+  --color-primary-light: #5e95cd;
+  --color-text: #2d2e2f;
+  --color-background-100: #94b0cd;
+  --color-background-500: #6d94b9;
+  --color-background-900: #1f466d;
+  --color-red: #ac4949;
+  --color-red-dark: #e03131;
+  --color-button: #dde9f5;
+  --color-button-dark: #b0d5f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 2.4rem;
+  color: var(--color-text);
+  background-color: var(--color-background-900);
+}
+
+/* NAV BAR */
+.navBar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 5.5rem;
+  padding: 0 3.2rem;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  align-items: center;
+}
+
+.search {
+  background-color: var(--color-primary-light);
+  border-radius: 0.7rem;
+  width: 40rem;
+  padding: 1.1rem 1.6rem;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.8rem;
+}
+
+.search::placeholder {
+  color: var(--color-text);
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.navBar strong {
+  justify-self: end;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  height: calc(100vh - 14rem);
+  margin-top: 3rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.box {
+  overflow-y: scroll;
+  width: 42rem;
+  max-width: 42rem;
+  position: relative;
+  background-color: var(--color-background-500);
+}
+
+.movie,
+.watched-movie {
+  display: flex;
+  padding: 2rem;
+  border: 0.1rem solid var(--color-background-100);
+}
+
+.movie:hover {
+  cursor: pointer;
+  background-color: var(--color-background-100);
+}
+
+.movie img,
+.watched-movie img {
+  height: 8rem;
+  margin-right: 2rem;
+}
+
+.movie div {
+  align-self: center;
+}
+
+.movie div p {
+  margin-top: 2rem;
+}
+
+/* MOVIE DETAILS */
+.movie-details {
+  position: relative;
+  /* display: grid; */
+  text-align: center;
+}
+
+.arrow-button {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  background-color: var(--color-button);
+}
+
+.arrow-button:hover {
+  background-color: var(--color-button-dark);
+}
+
+.add-to-list-button {
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 2rem;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  width: 6rem;
+  background-color: var(--color-button);
+}
+
+.add-to-list-button:hover {
+  background-color: var(--color-button-dark);
+}
+
+.movie-details img {
+  height: 20rem;
+  margin: 1rem;
+}
+
+/* WATCHED LIST SUMMARY */
+.header-summary {
+  padding: 1.5rem;
+  background-color: var(--color-background-100);
+}
+
+.summary {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.summary p {
+  margin: 0 1rem;
+}
+
+/* WATCHED LIST */
+.watched-movie div {
+  display: grid;
+}
+
+.watched-movie div div {
+  display: flex;
+  position: relative;
+  width: inherit;
+}
+
+.watched-movie div p {
+  margin: 0 1rem;
+}
+
+.btn-delete-movie {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-red);
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.btn-delete-movie:hover {
+  background-color: var(--color-red-dark);
+}
